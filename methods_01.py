@@ -10,9 +10,14 @@ class Wizard:
     
     
 
+    
     def cast_spell(self, cost):
-        self.mana = self.mana - cost
+     if self.mana >= cost:
+        self.mana -= cost
+        print(f"{self.name} just cast a spell!")
         print(f"{self.name} has {self.mana} mana left!")
+     else:
+        print(f"{self.name} does not have enough mana to cast the spell!")
 
 
 
@@ -22,14 +27,17 @@ class Wizard:
 
 fizzy = Wizard("Fizzy")
 dizzy = Wizard("Dizzy")
-fizzy.cast_spell(5)
+
+
+# Before casting a spell, check to see that mana is enough
+
+
+fizzy.cast_spell(52)
 dizzy.cast_spell(3)
 fizzy.regenerate_mana(mana_regen_amount = 2)
 dizzy.regenerate_mana(mana_regen_amount = 1)
   
-cost = 5
-  
-mana_regen_amount = 2
+
 
 
 
