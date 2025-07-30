@@ -1,23 +1,37 @@
+#If you want to make your class even more flexible,
+#  you could let each wizard have a unique name
+#  by using what’s called a constructor (__init__ method):
+
 class Wizard:
-    mana = 50
+
+    def __init__(self, name):
+        self.name = name
+        self.mana = 50
+    
     
 
     def cast_spell(self, cost):
         self.mana = self.mana - cost
-        print(f"Fizzy has {self.mana} mana left!")
+        print(f"{self.name} has {self.mana} mana left!")
 
 
 
     def regenerate_mana(self, mana_regen_amount):
         self.mana += mana_regen_amount 
-        print(f"Mana Regeneration of {mana_regen_amount}! \nFizzy's mana is now {self.mana}!")
+        print(f"Mana Regeneration of {mana_regen_amount}! \n{self.name}'s mana is now {self.mana}!")
 
-Fizzy = Wizard()  
+fizzy = Wizard("Fizzy")
+dizzy = Wizard("Dizzy")
+fizzy.cast_spell(5)
+dizzy.cast_spell(3)
+fizzy.regenerate_mana(mana_regen_amount = 2)
+dizzy.regenerate_mana(mana_regen_amount = 1)
+  
 cost = 5
-Fizzy.cast_spell(cost)  
+  
 mana_regen_amount = 2
 
-Fizzy.regenerate_mana(mana_regen_amount)
+
 
 
 
